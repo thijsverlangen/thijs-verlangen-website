@@ -333,28 +333,6 @@ export default function App() {
           <div className="authority-img fade-in fade-in-delay-2">
             <img src="VV6_web.jpg" alt="Thijs Verlangen presenteert strategie" loading="lazy" />
           </div>
-          <div className="authority-img fade-in fade-in-delay-1">
-            <img src="Grow Business event By ISABELLAVERDUYN-146_web.jpg" alt="Thijs Verlangen bij Grow Business event" loading="lazy" />
-          </div>
-          <div className="authority-img fade-in fade-in-delay-2">
-            <img src="FOF_Zuid-Afrika_DAG4-1_web.jpg" alt="Thijs Verlangen podcast opname Zuid-Afrika" loading="lazy" />
-          </div>
-          {/* Duplicated for seamless scroll loop */}
-          <div className="authority-img">
-            <img src="FullSizeRender 3_web.jpg" alt="Thijs Verlangen op het podium met microfoon" loading="lazy" />
-          </div>
-          <div className="authority-img">
-            <img src="DSC04640-2_web.jpg" alt="Thijs Verlangen spreekt voor publiek" loading="lazy" />
-          </div>
-          <div className="authority-img">
-            <img src="VV6_web.jpg" alt="Thijs Verlangen presenteert strategie" loading="lazy" />
-          </div>
-          <div className="authority-img">
-            <img src="Grow Business event By ISABELLAVERDUYN-146_web.jpg" alt="Thijs Verlangen bij Grow Business event" loading="lazy" />
-          </div>
-          <div className="authority-img">
-            <img src="FOF_Zuid-Afrika_DAG4-1_web.jpg" alt="Thijs Verlangen podcast opname Zuid-Afrika" loading="lazy" />
-          </div>
         </div>
         <div className="authority-quote-section fade-in">
           <blockquote className="authority-quote">
