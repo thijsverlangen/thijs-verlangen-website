@@ -230,7 +230,7 @@ export default function App() {
       <div className="marquee-bar">
         <div className="marquee-track">
           <span className="marquee-text">
-            Vermogensstrateeg <span className="sep">//</span> 250.000+ volgers <span className="sep">//</span> #1 Bestseller {'—'} Pas Op Dit Boek Maakt Je Rijk <span className="sep">//</span> Host Finance Inside Podcast <span className="sep">//</span> Eigenaar Verlangen Finance
+            Vermogensstrateeg <span className="sep">//</span> 250.000+ volgers <span className="sep">//</span> #1 Bestseller {'—'} Pas Op. Dit Boek Maakt Je Rijk <span className="sep">//</span> Host Finance Inside Podcast <span className="sep">//</span> Eigenaar Verlangen Finance
           </span>
         </div>
       </div>
@@ -280,7 +280,7 @@ export default function App() {
               >
                 Verlangen Finance
               </a>
-              {' '}helpt hij ondernemers en vermogende particulieren met vermogensplanning en fiscale optimalisatie. Als auteur van <em>Pas Op Dit Boek Maakt Je Rijk</em> en host van de Finance Inside podcast vertaalt hij complexe fiscale strategieen naar concrete actie die duizenden euro's per jaar oplevert.
+              {' '}helpt hij ondernemers en vermogende particulieren met vermogensplanning en fiscale optimalisatie. Als auteur van <em>Pas Op. Dit Boek Maakt Je Rijk</em> en host van de Finance Inside podcast vertaalt hij complexe fiscale strategieen naar concrete actie die duizenden euro's per jaar oplevert.
             </p>
             <p>Geen saaie spreadsheets. Geen jargon. Gewoon heldere taal over geld, belasting en vermogensopbouw die mensen daadwerkelijk kunnen toepassen.</p>
           </div>
@@ -512,7 +512,7 @@ export default function App() {
               , een financieel advieskantoor dat ondernemers en vermogende particulieren helpt met vermogensplanning, pensioenstructuren en belastingoptimalisatie. Met een team van specialisten begeleidt Verlangen Finance klanten bij het structureren van hun vermogen en het benutten van fiscale mogelijkheden. Zijn aanpak: geen wollige adviezen, maar concrete cijfers en directe implementatie.
             </p>
             <p>
-              Als auteur van de #1 bestseller <em>Pas Op Dit Boek Maakt Je Rijk</em> maakt hij financiele kennis toegankelijk voor iedereen. Als host van de <strong>Finance Inside podcast</strong> interviewt hij ondernemers en experts over geld, groei en generatievermogen.
+              Als auteur van de #1 bestseller <em>Pas Op. Dit Boek Maakt Je Rijk</em> maakt hij financiele kennis toegankelijk voor iedereen. Als host van de <strong>Finance Inside podcast</strong> interviewt hij ondernemers en experts over geld, groei en generatievermogen.
             </p>
             <p>Thijs woont in Nederland en is vader van een dochter. Hij gelooft dat financiele vrijheid niet betekent dat je stopt met werken, maar dat je kiest waarvoor je werkt.</p>
           </div>
@@ -622,7 +622,7 @@ export default function App() {
           </div>
         </div>
         <div className="bestseller-proof fade-in">
-          <img src="bestseller-nr1.png" alt="Pas Op Dit Boek Maakt Je Rijk op #1 in de Bestseller 60" loading="lazy" />
+          <img src="bestseller-nr1.png" alt="Pas Op. Dit Boek Maakt Je Rijk op #1 in de Bestseller 60" loading="lazy" />
         </div>
       </section>
 
