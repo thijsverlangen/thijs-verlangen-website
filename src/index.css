@@ -48,7 +48,7 @@ a { text-decoration: none; color: inherit; }
 
 /* ============ MARQUEE ============ */
 .marquee-bar { background: var(--gold); padding: 0.6rem 0; overflow: hidden; white-space: nowrap; }
-.marquee-track { display: flex; animation: marquee 35s linear infinite; }
+.marquee-track { display: flex; animation: marquee 18s linear infinite; }
 .marquee-text {
     font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em;
     text-transform: uppercase; color: var(--black); padding-right: 3rem; flex-shrink: 0;
@@ -405,6 +405,7 @@ a { text-decoration: none; color: inherit; }
     .hero-scroll { display: none; }
     .intro, .topics, .book, .services, .cta, .testimonials { padding: 5rem 1.5rem; }
     .authority, .bekend, .events, .showreel { padding: 4rem 1.5rem; }
+    .marquee-track { animation-duration: 10s; }
     .stats-bar { padding: 2rem 1.5rem; }
     .stats-grid { gap: 1.5rem; }
     .stat-number { font-size: 1.8rem; }
