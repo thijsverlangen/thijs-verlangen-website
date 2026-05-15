@@ -396,14 +396,9 @@ a { text-decoration: none; color: inherit; }
 
 @media (max-width: 768px) {
     .nav { padding: 1.2rem 1.5rem; }
-    .nav-links {
-        display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-        background: rgba(0,0,0,0.98); flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
-    }
-    .nav-links.open { display: flex; }
-    .nav-links a { font-size: 1.1rem; }
+    .nav-links { display: none !important; }
     .nav-cta { display: none; }
-    .nav-toggle { display: flex; }
+    .nav-toggle { display: none; }
     .hero-content { padding: 0 1.5rem 4rem; }
     .hero-scroll { display: none; }
     .intro, .topics, .book, .services, .cta, .testimonials { padding: 5rem 1.5rem; }
