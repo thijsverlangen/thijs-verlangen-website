@@ -47,14 +47,14 @@ a { text-decoration: none; color: inherit; }
 .nav-toggle span { width: 24px; height: 2px; background: var(--white); transition: all 0.3s; }
 
 /* ============ MARQUEE ============ */
-.marquee-bar { background: var(--gold); padding: 0.6rem 0; overflow: hidden; white-space: nowrap; }
-.marquee-track { display: flex; animation: marquee 18s linear infinite; }
+.marquee-bar { background: var(--gold); padding: 0.7rem 2rem; overflow: hidden; white-space: nowrap; text-align: center; }
+.marquee-track { display: flex; justify-content: center; flex-wrap: wrap; gap: 0; }
 .marquee-text {
     font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em;
-    text-transform: uppercase; color: var(--black); padding-right: 3rem; flex-shrink: 0;
+    text-transform: uppercase; color: var(--black);
 }
+.marquee-text:last-child { display: none; }
 .marquee-text .sep { display: inline-block; margin: 0 1.5rem; opacity: 0.4; }
-@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
 /* ============ HERO ============ */
 .hero { position: relative; min-height: 100vh; display: flex; align-items: flex-end; background: var(--black); overflow: hidden; }
@@ -263,7 +263,7 @@ a { text-decoration: none; color: inherit; }
 .book { padding: 8rem 4rem; background: var(--off-white); }
 .book-inner { display: grid; grid-template-columns: auto 1fr; gap: 5rem; align-items: center; max-width: 1050px; margin: 0 auto; }
 .book-covers { display: flex; gap: 1.5rem; }
-.book-cover { width: 260px; position: relative; flex-shrink: 0; }
+.book-cover { width: 260px; position: relative; flex-shrink: 0; flex-grow: 0; }
 .book-cover-visual {
     background: #2a2a3d; border-radius: 4px; padding: 2.5rem 2rem;
     aspect-ratio: 2/3; display: flex; flex-direction: column; justify-content: space-between;
@@ -403,7 +403,9 @@ a { text-decoration: none; color: inherit; }
     .hero-scroll { display: none; }
     .intro, .topics, .book, .services, .cta, .testimonials { padding: 5rem 1.5rem; }
     .authority, .bekend, .events, .showreel { padding: 4rem 1.5rem; }
-    .marquee-track { animation-duration: 10s; }
+    .marquee-bar { padding: 0.6rem 1rem; }
+    .marquee-text { font-size: 0.55rem; letter-spacing: 0.12em; }
+    .marquee-text .sep { margin: 0 0.8rem; }
     .stats-bar { padding: 2rem 1.5rem; }
     .stats-grid { gap: 1.5rem; }
     .stat-number { font-size: 1.8rem; }

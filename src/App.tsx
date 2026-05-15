@@ -230,10 +230,7 @@ export default function App() {
       <div className="marquee-bar">
         <div className="marquee-track">
           <span className="marquee-text">
-            De financiele strateeg die ondernemers miljoenen bespaart <span className="sep">//</span> 250.000+ volgers <span className="sep">//</span> #1 Bestseller {'—'} Pas Op Dit Boek Maakt Je Rijk <span className="sep">//</span> Host Finance Inside Podcast <span className="sep">//</span> De financiele strateeg die ondernemers miljoenen bespaart <span className="sep">//</span> 250.000+ volgers <span className="sep">//</span> #1 Bestseller {'—'} Pas Op Dit Boek Maakt Je Rijk <span className="sep">//</span> Host Finance Inside Podcast <span className="sep">//</span>
-          </span>
-          <span className="marquee-text">
-            De financiele strateeg die ondernemers miljoenen bespaart <span className="sep">//</span> 250.000+ volgers <span className="sep">//</span> #1 Bestseller {'—'} Pas Op Dit Boek Maakt Je Rijk <span className="sep">//</span> Host Finance Inside Podcast <span className="sep">//</span> De financiele strateeg die ondernemers miljoenen bespaart <span className="sep">//</span> 250.000+ volgers <span className="sep">//</span> #1 Bestseller {'—'} Pas Op Dit Boek Maakt Je Rijk <span className="sep">//</span> Host Finance Inside Podcast <span className="sep">//</span>
+            Vermogensstrateeg <span className="sep">//</span> 250.000+ volgers <span className="sep">//</span> #1 Bestseller {'—'} Pas Op Dit Boek Maakt Je Rijk <span className="sep">//</span> Host Finance Inside Podcast <span className="sep">//</span> Eigenaar Verlangen Finance
           </span>
         </div>
       </div>
