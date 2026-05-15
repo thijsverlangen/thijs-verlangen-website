@@ -271,7 +271,7 @@ export default function App() {
           <div className="gold-line"></div>
           <div className="intro-text">
             <p>
-              Thijs Verlangen is <strong>de stem van de nieuwe generatie financiele denkers</strong> in Nederland. Met een community van meer dan 250.000 volgers op social media bereikt hij dagelijks honderdduizenden Nederlanders. Als eigenaar van{' '}
+              Thijs Verlangen is <strong>de stem van de nieuwe generatie financiële denkers</strong> in Nederland. Met een community van meer dan 250.000 volgers op social media bereikt hij dagelijks honderdduizenden Nederlanders. Als eigenaar van{' '}
               <a
                 href="https://www.verlangenfinance.nl"
                 target="_blank"
@@ -280,7 +280,7 @@ export default function App() {
               >
                 Verlangen Finance
               </a>
-              {' '}helpt hij ondernemers en vermogende particulieren met vermogensplanning en fiscale optimalisatie. Als auteur van <em>Pas Op. Dit Boek Maakt Je Rijk</em> en host van de Finance Inside podcast vertaalt hij complexe fiscale strategieen naar concrete actie die duizenden euro's per jaar oplevert.
+              {' '}helpt hij ondernemers en vermogende particulieren met vermogensplanning en fiscale optimalisatie. Als auteur van <em>Pas Op. Dit Boek Maakt Je Rijk</em> en host van de Finance Inside podcast vertaalt hij complexe fiscale strategieën naar concrete actie die duizenden euro's per jaar oplevert.
             </p>
             <p>Geen saaie spreadsheets. Geen jargon. Gewoon heldere taal over geld, belasting en vermogensopbouw die mensen daadwerkelijk kunnen toepassen.</p>
           </div>
@@ -363,7 +363,7 @@ export default function App() {
           <div className="topic-card fade-in fade-in-delay-3">
             <p className="topic-number">03</p>
             <h3 className="topic-title">Belastingoptimalisatie (Legaal)</h3>
-            <p className="topic-desc">De strategieen die accountants je niet vertellen maar die duizenden euro's per jaar schelen.</p>
+            <p className="topic-desc">De strategieën die accountants je niet vertellen maar die duizenden euro's per jaar schelen.</p>
           </div>
           <div className="topic-card fade-in fade-in-delay-4">
             <p className="topic-number">04</p>
@@ -373,7 +373,7 @@ export default function App() {
           <div className="topic-card fade-in fade-in-delay-5">
             <p className="topic-number">05</p>
             <h3 className="topic-title">Pensioen in Eigen Regie</h3>
-            <p className="topic-desc">Waarom je niet moet vertrouwen op het overheidspensioen en hoe je zelf een pensioenstructuur opbouwt die jou wel financiele zekerheid geeft. Van pensioen in eigen beheer tot slimme oudedagsvoorzieningen.</p>
+            <p className="topic-desc">Waarom je niet moet vertrouwen op het overheidspensioen en hoe je zelf een pensioenstructuur opbouwt die jou wel financiële zekerheid geeft. Van pensioen in eigen beheer tot slimme oudedagsvoorzieningen.</p>
           </div>
           <div className="topic-card fade-in fade-in-delay-6">
             <p className="topic-number">06</p>
@@ -497,7 +497,7 @@ export default function App() {
           </h2>
           <div className="bio-text">
             <p>
-              Thijs Verlangen begon zijn carriere in de financiele wereld en zag al snel dat de meeste ondernemers geen idee hadden hoeveel geld ze lieten liggen. Niet door slechte investeringen, maar door <strong>gemiste fiscale kansen</strong>.
+              Thijs Verlangen begon zijn carrière in de financiële wereld en zag al snel dat de meeste ondernemers geen idee hadden hoeveel geld ze lieten liggen. Niet door slechte investeringen, maar door <strong>gemiste fiscale kansen</strong>.
             </p>
             <p>
               Vandaag is hij eigenaar van{' '}
@@ -512,9 +512,9 @@ export default function App() {
               , een financieel advieskantoor dat ondernemers en vermogende particulieren helpt met vermogensplanning, pensioenstructuren en belastingoptimalisatie. Met een team van specialisten begeleidt Verlangen Finance klanten bij het structureren van hun vermogen en het benutten van fiscale mogelijkheden. Zijn aanpak: geen wollige adviezen, maar concrete cijfers en directe implementatie.
             </p>
             <p>
-              Als auteur van de #1 bestseller <em>Pas Op. Dit Boek Maakt Je Rijk</em> maakt hij financiele kennis toegankelijk voor iedereen. Als host van de <strong>Finance Inside podcast</strong> interviewt hij ondernemers en experts over geld, groei en generatievermogen.
+              Als auteur van de #1 bestseller <em>Pas Op. Dit Boek Maakt Je Rijk</em> maakt hij financiële kennis toegankelijk voor iedereen. Als host van de <strong>Finance Inside podcast</strong> interviewt hij ondernemers en experts over geld, groei en generatievermogen.
             </p>
-            <p>Thijs woont in Nederland en is vader van een dochter. Hij gelooft dat financiele vrijheid niet betekent dat je stopt met werken, maar dat je kiest waarvoor je werkt.</p>
+            <p>Thijs woont in Nederland en is vader van een dochter. Hij gelooft dat financiële vrijheid niet betekent dat je stopt met werken, maar dat je kiest waarvoor je werkt.</p>
           </div>
           <a href="mailto:thijs@verlangenfinance.nl" className="btn">
             Boek Thijs <span className="btn-arrow">{'\u2192'}</span>
@@ -552,7 +552,7 @@ export default function App() {
               </svg>
             </div>
             <h3 className="service-title">Panel Deelnemer</h3>
-            <p className="service-desc">Expert perspectief op financiele onderwerpen voor conferenties en events. Scherpe meningen, onderbouwd met data en praktijkervaring.</p>
+            <p className="service-desc">Expert perspectief op financiële onderwerpen voor conferenties en events. Scherpe meningen, onderbouwd met data en praktijkervaring.</p>
           </div>
           <div className="service-card fade-in fade-in-delay-3">
             <div className="service-icon">
@@ -615,7 +615,7 @@ export default function App() {
             <h2 className="book-title">
               Pas Op Dit Boek<br />Maakt Je Rijk
             </h2>
-            <p className="book-text">Vandaag binnengekomen op #1 in de Bestseller 60. Het complete handboek voor iedereen die grip wil krijgen op geld, belasting en vermogensopbouw. Van de basis tot geavanceerde fiscale strategieen {'\u2014'} geschreven in de heldere taal waar Thijs om bekend staat.</p>
+            <p className="book-text">Vandaag binnengekomen op #1 in de Bestseller 60. Het complete handboek voor iedereen die grip wil krijgen op geld, belasting en vermogensopbouw. Van de basis tot geavanceerde fiscale strategieën {'\u2014'} geschreven in de heldere taal waar Thijs om bekend staat.</p>
             <a href="https://www.verlangenfinance.nl/preorder-boek" target="_blank" rel="noopener" className="btn">
               Bestel nu <span className="btn-arrow">{'\u2192'}</span>
             </a>
