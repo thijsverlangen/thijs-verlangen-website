@@ -5,6 +5,27 @@ export default function App() {
     const navbar = document.getElementById('navbar');
     const onScroll = () => {
       if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 80);
+
+      // Parallax on hero image
+      const heroImage = document.querySelector('.hero-image') as HTMLElement;
+      if (heroImage && window.scrollY < window.innerHeight) {
+        heroImage.style.transform = `translateY(${window.scrollY * 0.4}px)`;
+      }
+
+      // Sticky CTA bar
+      const stickyCta = document.getElementById('stickyCta');
+      const ctaSection = document.getElementById('contact');
+      const footer = document.querySelector('.footer');
+      if (stickyCta) {
+        const ctaTop = ctaSection?.getBoundingClientRect().top ?? Infinity;
+        const footerTop = footer?.getBoundingClientRect().top ?? Infinity;
+        const inCtaOrFooter = ctaTop < window.innerHeight && ctaTop > 0 || footerTop < window.innerHeight;
+        if (window.scrollY > window.innerHeight && !inCtaOrFooter) {
+          stickyCta.classList.add('sticky-cta-visible');
+        } else {
+          stickyCta.classList.remove('sticky-cta-visible');
+        }
+      }
     };
     window.addEventListener('scroll', onScroll);
 
@@ -43,12 +64,95 @@ export default function App() {
       anchorHandlers.push({ el: a, handler: h });
     });
 
+    // Theater video: cycle showreel → behind-the-scenes → loop
+    const theaterVideo = document.getElementById('theaterVideo') as HTMLVideoElement | null;
+    const videoSources = ['showreel-short.mp4', 'behindthescenes-short.mp4'];
+    let currentVideo = 0;
+    const onTheaterEnd = () => {
+      if (!theaterVideo) return;
+      currentVideo = (currentVideo + 1) % videoSources.length;
+      theaterVideo.src = videoSources[currentVideo];
+      theaterVideo.load();
+      theaterVideo.play().catch(() => {});
+    };
+    theaterVideo?.addEventListener('ended', onTheaterEnd);
+
+    // Animated counters on stats
+    const statObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target as HTMLElement;
+          statObserver.unobserve(el);
+          const original = el.getAttribute('data-target') || '';
+          let target = 0;
+          let suffix = '';
+          let prefix = '';
+          if (original === '#1') {
+            el.textContent = '#1';
+            return;
+          } else if (original.endsWith('K+')) {
+            target = parseInt(original);
+            suffix = 'K+';
+          } else if (original.endsWith('M+')) {
+            target = parseInt(original);
+            suffix = 'M+';
+          } else if (original.endsWith('+')) {
+            target = parseInt(original);
+            suffix = '+';
+          }
+          el.textContent = '0';
+          const duration = 1500;
+          const start = performance.now();
+          const animate = (now: number) => {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 4);
+            const current = Math.round(eased * target);
+            el.textContent = prefix + current + (progress >= 1 ? suffix : suffix);
+            if (progress < 1) requestAnimationFrame(animate);
+          };
+          requestAnimationFrame(animate);
+        });
+      },
+      { threshold: 0.5 }
+    );
+    document.querySelectorAll('.stat-number').forEach((el) => {
+      const htmlEl = el as HTMLElement;
+      htmlEl.setAttribute('data-target', htmlEl.textContent || '');
+      statObserver.observe(el);
+    });
+
+    // 3D tilt on book cover
+    const bookCover = document.querySelector('.book-cover-visual') as HTMLElement;
+    const onBookMove = (e: MouseEvent) => {
+      if (!bookCover) return;
+      const rect = bookCover.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      bookCover.style.transform = `perspective(800px) rotateY(${x * 15}deg) rotateX(${-y * 15}deg)`;
+    };
+    const onBookLeave = () => {
+      if (bookCover) bookCover.style.transform = 'perspective(800px) rotateY(0) rotateX(0)';
+    };
+    if (bookCover) {
+      bookCover.style.transition = 'transform 0.1s ease';
+      bookCover.addEventListener('mousemove', onBookMove);
+      bookCover.addEventListener('mouseleave', onBookLeave);
+    }
+
     return () => {
       window.removeEventListener('scroll', onScroll);
       navToggle?.removeEventListener('click', onToggle);
       linkHandlers.forEach(({ el, handler }) => el.removeEventListener('click', handler));
       anchorHandlers.forEach(({ el, handler }) => el.removeEventListener('click', handler));
       observer.disconnect();
+      theaterVideo?.removeEventListener('ended', onTheaterEnd);
+      statObserver.disconnect();
+      if (bookCover) {
+        bookCover.removeEventListener('mousemove', onBookMove);
+        bookCover.removeEventListener('mouseleave', onBookLeave);
+      }
     };
   }, []);
 
@@ -96,17 +200,7 @@ export default function App() {
       {/* HERO */}
       <section className="hero" id="hero">
         <div className="hero-image">
-          <video
-            id="heroVideo"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            poster="DSC08407_web.jpg"
-          >
-            <source src="behindthescenes.mp4" type="video/mp4" />
-          </video>
+          <img src="hero-new.jpg" alt="Thijs Verlangen" />
         </div>
         <div className="hero-gradient"></div>
         <div className="hero-content">
@@ -130,10 +224,10 @@ export default function App() {
       <div className="marquee-bar">
         <div className="marquee-track">
           <span className="marquee-text">
-            De financiele strateeg die ondernemers miljoenen bespaart <span className="sep">//</span> 250.000+ volgers <span className="sep">//</span> Auteur van Pas Op Dit Boek Maakt Je Rijk <span className="sep">//</span> Host Finance Inside Podcast <span className="sep">//</span> De financiele strateeg die ondernemers miljoenen bespaart <span className="sep">//</span> 250.000+ volgers <span className="sep">//</span> Auteur van Pas Op Dit Boek Maakt Je Rijk <span className="sep">//</span> Host Finance Inside Podcast <span className="sep">//</span>
+            De financiele strateeg die ondernemers miljoenen bespaart <span className="sep">//</span> 250.000+ volgers <span className="sep">//</span> #1 Bestseller {'—'} Pas Op Dit Boek Maakt Je Rijk <span className="sep">//</span> Host Finance Inside Podcast <span className="sep">//</span> De financiele strateeg die ondernemers miljoenen bespaart <span className="sep">//</span> 250.000+ volgers <span className="sep">//</span> #1 Bestseller {'—'} Pas Op Dit Boek Maakt Je Rijk <span className="sep">//</span> Host Finance Inside Podcast <span className="sep">//</span>
           </span>
           <span className="marquee-text">
-            De financiele strateeg die ondernemers miljoenen bespaart <span className="sep">//</span> 250.000+ volgers <span className="sep">//</span> Auteur van Pas Op Dit Boek Maakt Je Rijk <span className="sep">//</span> Host Finance Inside Podcast <span className="sep">//</span> De financiele strateeg die ondernemers miljoenen bespaart <span className="sep">//</span> 250.000+ volgers <span className="sep">//</span> Auteur van Pas Op Dit Boek Maakt Je Rijk <span className="sep">//</span> Host Finance Inside Podcast <span className="sep">//</span>
+            De financiele strateeg die ondernemers miljoenen bespaart <span className="sep">//</span> 250.000+ volgers <span className="sep">//</span> #1 Bestseller {'—'} Pas Op Dit Boek Maakt Je Rijk <span className="sep">//</span> Host Finance Inside Podcast <span className="sep">//</span> De financiele strateeg die ondernemers miljoenen bespaart <span className="sep">//</span> 250.000+ volgers <span className="sep">//</span> #1 Bestseller {'—'} Pas Op Dit Boek Maakt Je Rijk <span className="sep">//</span> Host Finance Inside Podcast <span className="sep">//</span>
           </span>
         </div>
       </div>
@@ -156,6 +250,10 @@ export default function App() {
           <div className="stat">
             <div className="stat-number">150+</div>
             <div className="stat-label">Podcast afleveringen</div>
+          </div>
+          <div className="stat">
+            <div className="stat-number">#1</div>
+            <div className="stat-label">Bestseller 60</div>
           </div>
         </div>
       </div>
@@ -235,6 +333,22 @@ export default function App() {
           <div className="authority-img fade-in fade-in-delay-2">
             <img src="FOF_Zuid-Afrika_DAG4-1_web.jpg" alt="Thijs Verlangen podcast opname Zuid-Afrika" loading="lazy" />
           </div>
+          {/* Duplicated for seamless scroll loop */}
+          <div className="authority-img">
+            <img src="FullSizeRender 3_web.jpg" alt="Thijs Verlangen op het podium met microfoon" loading="lazy" />
+          </div>
+          <div className="authority-img">
+            <img src="DSC04640-2_web.jpg" alt="Thijs Verlangen spreekt voor publiek" loading="lazy" />
+          </div>
+          <div className="authority-img">
+            <img src="VV6_web.jpg" alt="Thijs Verlangen presenteert strategie" loading="lazy" />
+          </div>
+          <div className="authority-img">
+            <img src="Grow Business event By ISABELLAVERDUYN-146_web.jpg" alt="Thijs Verlangen bij Grow Business event" loading="lazy" />
+          </div>
+          <div className="authority-img">
+            <img src="FOF_Zuid-Afrika_DAG4-1_web.jpg" alt="Thijs Verlangen podcast opname Zuid-Afrika" loading="lazy" />
+          </div>
         </div>
         <div className="authority-quote-section fade-in">
           <blockquote className="authority-quote">
@@ -270,17 +384,17 @@ export default function App() {
             <h3 className="topic-title">Belastingoptimalisatie (Legaal)</h3>
             <p className="topic-desc">De strategieen die accountants je niet vertellen maar die duizenden euro's per jaar schelen.</p>
           </div>
-          <div className="topic-card fade-in fade-in-delay-1">
+          <div className="topic-card fade-in fade-in-delay-4">
             <p className="topic-number">04</p>
             <h3 className="topic-title">Generatievermogen</h3>
             <p className="topic-desc">Hoe je vermogen opbouwt dat verder gaat dan jezelf: erfplanning, schenkingen en familiestructuren.</p>
           </div>
-          <div className="topic-card fade-in fade-in-delay-2">
+          <div className="topic-card fade-in fade-in-delay-5">
             <p className="topic-number">05</p>
             <h3 className="topic-title">Pensioen in Eigen Regie</h3>
             <p className="topic-desc">Waarom je niet moet vertrouwen op het overheidspensioen en hoe je zelf een pensioenstructuur opbouwt die jou wel financiele zekerheid geeft {'\u2014'} van pensioen in eigen beheer tot slimme oudedagsvoorzieningen.</p>
           </div>
-          <div className="topic-card fade-in fade-in-delay-3">
+          <div className="topic-card fade-in fade-in-delay-6">
             <p className="topic-number">06</p>
             <h3 className="topic-title">Box 3 &amp; Slim Beleggen</h3>
             <p className="topic-desc">Hoe je als vermogende particulier of ondernemer slim omgaat met de nieuwe Box 3 regels en je rendement optimaliseert zonder onnodige belastingdruk.</p>
@@ -299,22 +413,37 @@ export default function App() {
             <div className="testimonial-quote-mark">{'\u201C'}</div>
             <p className="testimonial-text">Thijs kent alle kneepjes van het vak om juist op een legale manier zoveel mogelijk geld te besparen.</p>
             <div className="testimonial-divider"></div>
-            <p className="testimonial-author">Joep Rovers</p>
-            <p className="testimonial-role">Founder Elvou Group</p>
+            <div className="testimonial-footer">
+              <div className="testimonial-avatar">JR</div>
+              <div>
+                <p className="testimonial-author">Joep Rovers</p>
+                <p className="testimonial-role">Founder Elvou Group</p>
+              </div>
+            </div>
           </div>
           <div className="testimonial fade-in fade-in-delay-2">
             <div className="testimonial-quote-mark">{'\u201C'}</div>
             <p className="testimonial-text">Thijs maakt van fiscale planning iets wat je wilt begrijpen. Zijn kennis is diepgaand en zijn manier van overbrengen is verfrissend eerlijk.</p>
             <div className="testimonial-divider"></div>
-            <p className="testimonial-author">Tibor</p>
-            <p className="testimonial-role">Ondernemer</p>
+            <div className="testimonial-footer">
+              <div className="testimonial-avatar">T</div>
+              <div>
+                <p className="testimonial-author">Tibor</p>
+                <p className="testimonial-role">Ondernemer</p>
+              </div>
+            </div>
           </div>
           <div className="testimonial fade-in fade-in-delay-3">
             <div className="testimonial-quote-mark">{'\u201C'}</div>
             <p className="testimonial-text">Helder, concreet en zonder jargon. Thijs weet precies waar de kansen liggen en legt complexe stof haarfijn uit aan ondernemers.</p>
             <div className="testimonial-divider"></div>
-            <p className="testimonial-author">Jaro</p>
-            <p className="testimonial-role">Lotgenoten</p>
+            <div className="testimonial-footer">
+              <div className="testimonial-avatar">J</div>
+              <div>
+                <p className="testimonial-author">Jaro</p>
+                <p className="testimonial-role">Lotgenoten</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -368,8 +497,8 @@ export default function App() {
           <h2 className="showreel-title">Van theaterpodium tot keynote</h2>
         </div>
         <div className="showreel-wrapper fade-in">
-          <video autoPlay muted loop playsInline preload="metadata" poster="DSC08407_web.jpg">
-            <source src="showreel.mp4" type="video/mp4" />
+          <video id="theaterVideo" autoPlay muted playsInline preload="metadata" poster="DSC08407_web.jpg">
+            <source src="showreel-short.mp4" type="video/mp4" />
           </video>
         </div>
         <p className="showreel-caption">Highlights uit recente optredens</p>
@@ -402,7 +531,7 @@ export default function App() {
               ondernemers en vermogende particulieren met vermogensplanning, pensioenstructuren en belastingoptimalisatie. Zijn aanpak: geen wollige adviezen, maar concrete cijfers en directe implementatie.
             </p>
             <p>
-              Als auteur van <em>Pas Op Dit Boek Maakt Je Rijk</em> maakt hij financiele kennis toegankelijk voor iedereen. Als host van de <strong>Finance Inside podcast</strong> interviewt hij ondernemers en experts over geld, groei en generatievermogen.
+              Als auteur van de #1 bestseller <em>Pas Op Dit Boek Maakt Je Rijk</em> maakt hij financiele kennis toegankelijk voor iedereen. Als host van de <strong>Finance Inside podcast</strong> interviewt hij ondernemers en experts over geld, groei en generatievermogen.
             </p>
             <p>Thijs woont in Nederland, is vader van een dochter, en traint voor zijn eerste kickbokswedstrijd. Hij gelooft dat financiele vrijheid niet betekent dat je stopt met werken, maar dat je kiest waarvoor je werkt.</p>
           </div>
@@ -499,10 +628,13 @@ export default function App() {
           </div>
           <div className="book-content">
             <p className="section-label">Het Boek</p>
+            <div style={{ display: 'inline-block', background: '#F7CD45', color: '#000', fontWeight: 800, fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase' as const, padding: '6px 14px', borderRadius: '4px', marginBottom: '14px' }}>
+              {'\u2605'} #1 Bestseller 60
+            </div>
             <h2 className="book-title">
               Pas Op Dit Boek<br />Maakt Je Rijk
             </h2>
-            <p className="book-text">Het complete handboek voor iedereen die grip wil krijgen op geld, belasting en vermogensopbouw. Van de basis tot geavanceerde fiscale strategieen {'\u2014'} geschreven in de heldere taal waar Thijs om bekend staat.</p>
+            <p className="book-text">Vandaag binnengekomen op #1 in de Bestseller 60. Het complete handboek voor iedereen die grip wil krijgen op geld, belasting en vermogensopbouw. Van de basis tot geavanceerde fiscale strategieen {'\u2014'} geschreven in de heldere taal waar Thijs om bekend staat.</p>
             <a href="https://www.verlangenfinance.nl/preorder-boek" target="_blank" rel="noopener" className="btn">
               Bestel nu <span className="btn-arrow">{'\u2192'}</span>
             </a>
@@ -551,6 +683,13 @@ export default function App() {
           </div>
         </div>
       </section>
+
+      {/* STICKY CTA BAR */}
+      <div className="sticky-cta" id="stickyCta">
+        <a href="mailto:thijs@verlangenfinance.nl" className="sticky-cta-btn">
+          Boek Thijs voor jouw event {'→'}
+        </a>
+      </div>
 
       {/* FOOTER */}
       <footer className="footer">
