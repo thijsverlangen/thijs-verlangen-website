@@ -376,7 +376,7 @@ export default function App() {
           <div className="topic-card fade-in fade-in-delay-5">
             <p className="topic-number">05</p>
             <h3 className="topic-title">Pensioen in Eigen Regie</h3>
-            <p className="topic-desc">Waarom je niet moet vertrouwen op het overheidspensioen en hoe je zelf een pensioenstructuur opbouwt die jou wel financiele zekerheid geeft {'\u2014'} van pensioen in eigen beheer tot slimme oudedagsvoorzieningen.</p>
+            <p className="topic-desc">Waarom je niet moet vertrouwen op het overheidspensioen en hoe je zelf een pensioenstructuur opbouwt die jou wel financiele zekerheid geeft. Van pensioen in eigen beheer tot slimme oudedagsvoorzieningen.</p>
           </div>
           <div className="topic-card fade-in fade-in-delay-6">
             <p className="topic-number">06</p>
