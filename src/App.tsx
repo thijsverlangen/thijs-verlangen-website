@@ -66,6 +66,11 @@ export default function App() {
 
     // Theater video: cycle showreel → behind-the-scenes → loop
     const theaterVideo = document.getElementById('theaterVideo') as HTMLVideoElement | null;
+    if (theaterVideo) {
+      // React's muted prop doesn't always render as HTML attribute — set explicitly
+      theaterVideo.muted = true;
+      theaterVideo.play().catch(() => {});
+    }
     const videoSources = ['showreel-short.mp4', 'behindthescenes-short.mp4'];
     let currentVideo = 0;
     const onTheaterEnd = () => {
@@ -73,6 +78,7 @@ export default function App() {
       currentVideo = (currentVideo + 1) % videoSources.length;
       theaterVideo.src = videoSources[currentVideo];
       theaterVideo.load();
+      theaterVideo.muted = true;
       theaterVideo.play().catch(() => {});
     };
     theaterVideo?.addEventListener('ended', onTheaterEnd);
