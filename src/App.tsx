@@ -274,7 +274,7 @@ export default function App() {
           <div className="gold-line"></div>
           <div className="intro-text">
             <p>
-              Thijs Verlangen is <strong>de stem van de nieuwe generatie financiele denkers</strong> in Nederland. Met een community van meer dan 250.000 volgers op social media bereikt hij dagelijks honderdduizenden Nederlanders. Als oprichter van{' '}
+              Thijs Verlangen is <strong>de stem van de nieuwe generatie financiele denkers</strong> in Nederland. Met een community van meer dan 250.000 volgers op social media bereikt hij dagelijks honderdduizenden Nederlanders. Als eigenaar van{' '}
               <a
                 href="https://www.verlangenfinance.nl"
                 target="_blank"
@@ -283,7 +283,7 @@ export default function App() {
               >
                 Verlangen Finance
               </a>
-              , auteur van <em>Pas Op Dit Boek Maakt Je Rijk</em> en host van de Finance Inside podcast vertaalt hij complexe fiscale strategieen naar concrete actie die ondernemers en vermogende particulieren duizenden euro's per jaar oplevert.
+              {' '}helpt hij ondernemers en vermogende particulieren met vermogensplanning en fiscale optimalisatie. Als auteur van <em>Pas Op Dit Boek Maakt Je Rijk</em> en host van de Finance Inside podcast vertaalt hij complexe fiscale strategieen naar concrete actie die duizenden euro's per jaar oplevert.
             </p>
             <p>Geen saaie spreadsheets. Geen jargon. Gewoon heldere taal over geld, belasting en vermogensopbouw die mensen daadwerkelijk kunnen toepassen.</p>
           </div>
@@ -525,7 +525,7 @@ export default function App() {
               Thijs Verlangen begon zijn carriere in de financiele wereld en zag al snel dat de meeste ondernemers geen idee hadden hoeveel geld ze lieten liggen. Niet door slechte investeringen, maar door <strong>gemiste fiscale kansen</strong>.
             </p>
             <p>
-              Vandaag helpt hij via{' '}
+              Vandaag is hij eigenaar van{' '}
               <a
                 href="https://www.verlangenfinance.nl"
                 target="_blank"
@@ -533,8 +533,8 @@ export default function App() {
                 style={{ color: 'var(--gold)', fontWeight: 600, borderBottom: '1px solid var(--gold)' }}
               >
                 Verlangen Finance
-              </a>{' '}
-              ondernemers en vermogende particulieren met vermogensplanning, pensioenstructuren en belastingoptimalisatie. Zijn aanpak: geen wollige adviezen, maar concrete cijfers en directe implementatie.
+              </a>
+              , een financieel advieskantoor dat ondernemers en vermogende particulieren helpt met vermogensplanning, pensioenstructuren en belastingoptimalisatie. Met een team van specialisten begeleidt Verlangen Finance klanten bij het structureren van hun vermogen en het benutten van fiscale mogelijkheden. Zijn aanpak: geen wollige adviezen, maar concrete cijfers en directe implementatie.
             </p>
             <p>
               Als auteur van de #1 bestseller <em>Pas Op Dit Boek Maakt Je Rijk</em> maakt hij financiele kennis toegankelijk voor iedereen. Als host van de <strong>Finance Inside podcast</strong> interviewt hij ondernemers en experts over geld, groei en generatievermogen.
