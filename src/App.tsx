@@ -517,7 +517,7 @@ export default function App() {
             <p>
               Als auteur van de #1 bestseller <em>Pas Op Dit Boek Maakt Je Rijk</em> maakt hij financiele kennis toegankelijk voor iedereen. Als host van de <strong>Finance Inside podcast</strong> interviewt hij ondernemers en experts over geld, groei en generatievermogen.
             </p>
-            <p>Thijs woont in Nederland, is vader van een dochter, en traint voor zijn eerste kickbokswedstrijd. Hij gelooft dat financiele vrijheid niet betekent dat je stopt met werken, maar dat je kiest waarvoor je werkt.</p>
+            <p>Thijs woont in Nederland en is vader van een dochter. Hij gelooft dat financiele vrijheid niet betekent dat je stopt met werken, maar dat je kiest waarvoor je werkt.</p>
           </div>
           <a href="mailto:thijs@verlangenfinance.nl" className="btn">
             Boek Thijs <span className="btn-arrow">{'\u2192'}</span>
