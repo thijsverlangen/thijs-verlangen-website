@@ -621,6 +621,9 @@ export default function App() {
             </a>
           </div>
         </div>
+        <div className="bestseller-proof fade-in">
+          <img src="bestseller-nr1.png" alt="Pas Op Dit Boek Maakt Je Rijk op #1 in de Bestseller 60" loading="lazy" />
+        </div>
       </section>
 
       {/* CONTACT / CTA */}
