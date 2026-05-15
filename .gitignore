@@ -4,7 +4,8 @@ dist
 *.log
 
 # Grote originele bronbestanden — niet nodig voor deploy
-*.MP4
+public/showreel.mp4
+public/behindthescenes.mp4
 /DSC*.jpg
 /FOF*.jpg
 /FullSizeRender*.JPG
