@@ -314,6 +314,11 @@ export default function App() {
         </div>
       </section>
 
+      {/* SECTION DIVIDER */}
+      <div className="section-divider" aria-hidden="true">
+        <span className="section-divider-line"></span>
+      </div>
+
       {/* AUTHORITY / ACTION PHOTOS */}
       <section className="authority">
         <div className="fade-in">
@@ -578,33 +583,11 @@ export default function App() {
           <div className="book-covers">
             <div className="book-cover">
               <div className="book-cover-visual">
-                <div className="book-cover-main-title">
-                  PAS OP.<br />DIT BOEK<br />MAAKT<br />JE RIJK.
-                </div>
-                <div className="book-cover-bottom">
-                  <p className="book-cover-subtitle">
-                    Lifehacks voor<br />belasting, pensioen<br />en vermogen
-                  </p>
-                  <p className="book-cover-author-name">Thijs Verlangen</p>
-                </div>
+                <img src="boek-voorkant.png" alt="Pas Op. Dit Boek Maakt Je Rijk - voorkant" loading="lazy" />
               </div>
             </div>
             <div className="book-back">
-              <div>
-                <p className="book-back-quote">
-                  {'\u2018'}Thijs kent alle kneepjes van het vak om juist op een legale manier zoveel mogelijk geld te besparen.{'\u2019'}
-                </p>
-                <p className="book-back-quote-author">Joep Rovers</p>
-                <p className="book-back-quote-role">Founder Elvou Group</p>
-              </div>
-              <div className="book-back-desc">
-                <p>
-                  <strong>Je werkt hard voor je geld, maar werkt je geld ook hard genoeg voor jou?</strong>
-                </p>
-                <br />
-                <p>In dit boek laat hij zien hoe het Nederlandse geldsysteem werkelijk in elkaar zit. Je ontdekt hoe je minder belasting betaalt, hoe je slim vermogen opbouwt, wanneer een BV wel of niet verstandig is en hoe je pensioen en hypotheek beter voor je kunnen werken.</p>
-              </div>
-              <p className="book-back-nocure">NO CURE {'\u2014'} NO PAY</p>
+              <img src="boek-achterkant.png" alt="Pas Op. Dit Boek Maakt Je Rijk - achterkant" loading="lazy" />
             </div>
           </div>
           <div className="book-content">
