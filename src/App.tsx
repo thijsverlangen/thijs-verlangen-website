@@ -629,8 +629,7 @@ export default function App() {
           <h2 className="cta-title">Klaar om te praten?</h2>
           <p className="cta-text">Vertel kort over je event en ik reageer binnen 24 uur.</p>
 
-          {/* Booking form — replace YOUR_FORM_ID with your Formspree form ID (formspree.io) */}
-          <form className="booking-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <form className="booking-form" action="https://formspree.io/f/xdabqbra" method="POST">
             <div className="form-row">
               <label className="form-field">
                 <span>Naam</span>
