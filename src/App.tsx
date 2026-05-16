@@ -172,7 +172,7 @@ export default function App() {
     <>
       {/* NAV */}
       <nav className="nav" id="navbar">
-        <a href="#hero" className="nav-logo" aria-label="Thijs Verlangen — terug naar boven">
+        <a href="#hero" className="nav-logo" aria-label="Thijs Verlangen, terug naar boven">
           THIJS <span>VERLANGEN</span>
         </a>
         <ul className="nav-links" id="navLinks">
@@ -236,7 +236,7 @@ export default function App() {
       <div className="marquee-bar">
         <div className="marquee-track">
           <span className="marquee-text">
-            Vermogensstrateeg <span className="sep">//</span> 250.000+ volgers <span className="sep">//</span> #1 Bestseller {'—'} Pas Op. Dit Boek Maakt Je Rijk <span className="sep">//</span> Host Finance Inside Podcast <span className="sep">//</span> Eigenaar Verlangen Finance
+            Vermogensstrateeg <span className="sep">//</span> 250.000+ volgers <span className="sep">//</span> #1 Bestseller Pas Op. Dit Boek Maakt Je Rijk <span className="sep">//</span> Host Finance Inside Podcast <span className="sep">//</span> Eigenaar Verlangen Finance
           </span>
         </div>
       </div>
@@ -302,7 +302,7 @@ export default function App() {
               SBS6<span className="sub">Samen Sterk</span>
             </div>
             <div className="bekend-logo">
-              Zondag op Vier<span className="sub">TV — Pernille la Lau</span>
+              Zondag op Vier<span className="sub">TV / Pernille la Lau</span>
             </div>
             <div className="bekend-logo">
               WTFinance<span className="sub">Jay Jay Boske</span>
@@ -566,7 +566,7 @@ export default function App() {
             <h2 className="book-title">
               Pas Op Dit Boek<br />Maakt Je Rijk
             </h2>
-            <p className="book-text">Vandaag binnengekomen op #1 in de Bestseller 60. Het complete handboek voor iedereen die grip wil krijgen op geld, belasting en vermogensopbouw. Van de basis tot geavanceerde fiscale strategieën {'\u2014'} geschreven in de heldere taal waar Thijs om bekend staat.</p>
+            <p className="book-text">Vandaag binnengekomen op #1 in de Bestseller 60. Het complete handboek voor iedereen die grip wil krijgen op geld, belasting en vermogensopbouw. Van de basis tot geavanceerde fiscale strategieën, geschreven in de heldere taal waar Thijs om bekend staat.</p>
             <a href="https://www.verlangenfinance.nl/preorder-boek" target="_blank" rel="noopener" className="btn btn-book">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginRight: '6px', verticalAlign: 'middle' }}>
                 <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
@@ -590,7 +590,7 @@ export default function App() {
         <div className="faq-list fade-in">
           <details className="faq-item">
             <summary>Wat kost een keynote of optreden van Thijs?</summary>
-            <p>Tarieven verschillen per type sessie, duur, locatie en publiek. Voor een concreet voorstel: vul het boekingsformulier in of stuur een mail met de event details — je krijgt binnen 24 uur een reactie.</p>
+            <p>Tarieven verschillen per type sessie, duur, locatie en publiek. Voor een concreet voorstel: vul het boekingsformulier in of stuur een mail met de event details. Je krijgt binnen 24 uur een reactie.</p>
           </details>
           <details className="faq-item">
             <summary>Hoe lang duurt een sessie?</summary>
@@ -602,7 +602,7 @@ export default function App() {
           </details>
           <details className="faq-item">
             <summary>Doet Thijs ook online of hybride events?</summary>
-            <p>Ja. Online keynotes, webinars en panel-deelnames doe ik regelmatig. Voor hybride events (live publiek + online stream) is een goede technische voorbereiding belangrijk — daar geef ik een korte rider voor zodat alles soepel verloopt.</p>
+            <p>Ja. Online keynotes, webinars en panel-deelnames doe ik regelmatig. Voor hybride events (live publiek + online stream) is een goede technische voorbereiding belangrijk. Daar geef ik een korte rider voor zodat alles soepel verloopt.</p>
           </details>
           <details className="faq-item">
             <summary>Reist Thijs ook buiten Nederland?</summary>
@@ -618,7 +618,7 @@ export default function App() {
           </details>
           <details className="faq-item">
             <summary>Spreekt Thijs ook in het Engels?</summary>
-            <p>Ja. Engelstalige keynotes en panels zijn mogelijk. De meeste content is oorspronkelijk Nederlandstalig — voor een Engelstalig optreden plan ik wat extra voorbereidingstijd in.</p>
+            <p>Ja. Engelstalige keynotes en panels zijn mogelijk. De meeste content is oorspronkelijk Nederlandstalig. Voor een Engelstalig optreden plan ik wat extra voorbereidingstijd in.</p>
           </details>
         </div>
       </section>
