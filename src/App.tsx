@@ -31,12 +31,18 @@ export default function App() {
 
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
-    const onToggle = () => navLinks?.classList.toggle('open');
+    const onToggle = () => {
+      const isOpen = navLinks?.classList.toggle('open') ?? false;
+      navToggle?.setAttribute('aria-expanded', String(isOpen));
+    };
     navToggle?.addEventListener('click', onToggle);
 
     const linkHandlers: Array<{ el: Element; handler: EventListener }> = [];
     navLinks?.querySelectorAll('a').forEach((l) => {
-      const h = () => navLinks.classList.remove('open');
+      const h = () => {
+        navLinks.classList.remove('open');
+        navToggle?.setAttribute('aria-expanded', 'false');
+      };
       l.addEventListener('click', h);
       linkHandlers.push({ el: l, handler: h });
     });
@@ -166,7 +172,7 @@ export default function App() {
     <>
       {/* NAV */}
       <nav className="nav" id="navbar">
-        <a href="#" className="nav-logo">
+        <a href="#hero" className="nav-logo" aria-label="Thijs Verlangen — terug naar boven">
           THIJS <span>VERLANGEN</span>
         </a>
         <ul className="nav-links" id="navLinks">
@@ -196,11 +202,11 @@ export default function App() {
         <a href="mailto:thijs@verlangenfinance.nl" className="nav-cta">
           Boek Thijs
         </a>
-        <div className="nav-toggle" id="navToggle" aria-label="Menu">
+        <button className="nav-toggle" id="navToggle" type="button" aria-label="Menu openen of sluiten" aria-expanded="false" aria-controls="navLinks">
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </button>
       </nav>
 
       {/* HERO */}
@@ -293,22 +299,22 @@ export default function App() {
           <p className="bekend-label">Bekend van</p>
           <div className="bekend-logos">
             <div className="bekend-logo">
-              TV<span className="sub">Zondag op Vier</span>
+              Zondag op Vier<span className="sub">TV — Pernille la Lau</span>
             </div>
             <div className="bekend-logo">
-              Finance Inside<span className="sub">Podcast</span>
+              WTFinance<span className="sub">Jay Jay Boske</span>
             </div>
             <div className="bekend-logo">
-              Theatershow<span className="sub">Live events</span>
+              Finance Inside<span className="sub">Podcast host</span>
             </div>
             <div className="bekend-logo">
-              Social Media<span className="sub">250K+ volgers</span>
+              Grow Business Event<span className="sub">Keynote</span>
             </div>
             <div className="bekend-logo">
-              Conferenties<span className="sub">Keynote spreker</span>
+              FOF Zuid-Afrika<span className="sub">Podcast</span>
             </div>
             <div className="bekend-logo">
-              Publicaties<span className="sub">Auteur</span>
+              Bestseller 60<span className="sub">#1 Auteur</span>
             </div>
           </div>
         </div>
@@ -335,14 +341,6 @@ export default function App() {
           <div className="authority-img fade-in fade-in-delay-2">
             <img src="VV6_web.jpg" alt="Thijs Verlangen presenteert strategie" loading="lazy" />
           </div>
-        </div>
-        <div className="authority-quote-section fade-in">
-          <blockquote className="authority-quote">
-            <span className="gold">{'\u201C'}</span>Thijs kent alle kneepjes van het vak om juist op een legale manier zoveel mogelijk geld te besparen.<span className="gold">{'\u201D'}</span>
-          </blockquote>
-          <p className="authority-attribution">
-            Joep Rovers<span>Founder Elvou Group</span>
-          </p>
         </div>
       </section>
 
@@ -599,8 +597,12 @@ export default function App() {
               Pas Op Dit Boek<br />Maakt Je Rijk
             </h2>
             <p className="book-text">Vandaag binnengekomen op #1 in de Bestseller 60. Het complete handboek voor iedereen die grip wil krijgen op geld, belasting en vermogensopbouw. Van de basis tot geavanceerde fiscale strategieën {'\u2014'} geschreven in de heldere taal waar Thijs om bekend staat.</p>
-            <a href="https://www.verlangenfinance.nl/preorder-boek" target="_blank" rel="noopener" className="btn">
-              Bestel nu <span className="btn-arrow">{'\u2192'}</span>
+            <a href="https://www.verlangenfinance.nl/preorder-boek" target="_blank" rel="noopener" className="btn btn-book">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginRight: '6px', verticalAlign: 'middle' }}>
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+              </svg>
+              Bestel het boek <span className="btn-arrow">{'\u2192'}</span>
             </a>
           </div>
         </div>
@@ -609,11 +611,103 @@ export default function App() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="faq" id="faq">
+        <div className="section-header fade-in">
+          <p className="section-label">Veelgestelde vragen</p>
+          <h2 className="section-title">Praktische zaken<br />op een rij</h2>
+        </div>
+        <div className="faq-list fade-in">
+          <details className="faq-item">
+            <summary>Wat kost een keynote of optreden van Thijs?</summary>
+            <p>Tarieven verschillen per type sessie, duur, locatie en publiek. Voor een concreet voorstel: vul het boekingsformulier in of stuur een mail met de event details — je krijgt binnen 24 uur een reactie.</p>
+          </details>
+          <details className="faq-item">
+            <summary>Hoe lang duurt een sessie?</summary>
+            <p>Keynotes zijn typisch 30 tot 60 minuten. Voor diepere sessies, workshops of Q&amp;A formats kan dit oplopen tot 2 uur. Duur stem ik altijd af op het event-programma en de doelgroep.</p>
+          </details>
+          <details className="faq-item">
+            <summary>Voor welk type publiek is Thijs geschikt?</summary>
+            <p>Primair: ondernemers en vermogende particulieren. Daarnaast spreek ik regelmatig voor financieel adviseurs, family offices, beleggersclubs en mastermind-groepen. Geen advies-jargon: heldere taal, concrete strategie, direct toepasbaar.</p>
+          </details>
+          <details className="faq-item">
+            <summary>Doet Thijs ook online of hybride events?</summary>
+            <p>Ja. Online keynotes, webinars en panel-deelnames doe ik regelmatig. Voor hybride events (live publiek + online stream) is een goede technische voorbereiding belangrijk — daar geef ik een korte rider voor zodat alles soepel verloopt.</p>
+          </details>
+          <details className="faq-item">
+            <summary>Reist Thijs ook buiten Nederland?</summary>
+            <p>Ja, Europa en daarbuiten zijn bespreekbaar. Reis- en verblijfskosten worden los gefactureerd. Voor events op locatie buiten de Benelux plannen we minimaal 6 weken vooruit.</p>
+          </details>
+          <details className="faq-item">
+            <summary>Welke voorbereidingstijd is er nodig?</summary>
+            <p>Standaard 2 tot 4 weken. Voor maatwerk-content (bijv. case-specifieke voorbeelden uit jouw branche) graag eerder boeken zodat ik tijd heb om me in te lezen. Voor laatste-moment boekingen is contact maken altijd de moeite waard.</p>
+          </details>
+          <details className="faq-item">
+            <summary>Hoe verloopt de boeking?</summary>
+            <p>Stap 1: vul het formulier hieronder in of mail rechtstreeks. Stap 2: korte kennismakings-call om event en verwachtingen door te nemen. Stap 3: voorstel met tarief en voorwaarden. Stap 4: bevestiging en planning. Eenvoudig en zonder gedoe.</p>
+          </details>
+          <details className="faq-item">
+            <summary>Spreekt Thijs ook in het Engels?</summary>
+            <p>Ja. Engelstalige keynotes en panels zijn mogelijk. De meeste content is oorspronkelijk Nederlandstalig — voor een Engelstalig optreden plan ik wat extra voorbereidingstijd in.</p>
+          </details>
+        </div>
+      </section>
+
       {/* CONTACT / CTA */}
       <section className="cta" id="contact">
         <div className="fade-in">
           <h2 className="cta-title">Klaar om te praten?</h2>
-          <p className="cta-text">Voor boekingen, media aanvragen of samenwerkingen:</p>
+          <p className="cta-text">Vertel kort over je event en ik reageer binnen 24 uur.</p>
+
+          {/* Booking form — replace YOUR_FORM_ID with your Formspree form ID (formspree.io) */}
+          <form className="booking-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div className="form-row">
+              <label className="form-field">
+                <span>Naam</span>
+                <input type="text" name="name" required autoComplete="name" />
+              </label>
+              <label className="form-field">
+                <span>E-mail</span>
+                <input type="email" name="email" required autoComplete="email" />
+              </label>
+            </div>
+            <div className="form-row">
+              <label className="form-field">
+                <span>Organisatie / event</span>
+                <input type="text" name="organization" autoComplete="organization" />
+              </label>
+              <label className="form-field">
+                <span>Type sessie</span>
+                <select name="session_type" defaultValue="Keynote">
+                  <option>Keynote</option>
+                  <option>Panel</option>
+                  <option>Media / Podcast</option>
+                  <option>Workshop</option>
+                  <option>Anders</option>
+                </select>
+              </label>
+            </div>
+            <div className="form-row">
+              <label className="form-field">
+                <span>Event datum (indien bekend)</span>
+                <input type="date" name="event_date" />
+              </label>
+              <label className="form-field">
+                <span>Locatie / online</span>
+                <input type="text" name="location" placeholder="Stad of online" />
+              </label>
+            </div>
+            <label className="form-field form-field-full">
+              <span>Bericht</span>
+              <textarea name="message" rows={4} placeholder="Doelgroep, gewenste duur, eventuele bijzonderheden..." required></textarea>
+            </label>
+            <input type="hidden" name="_subject" value="Nieuwe boekingsaanvraag via thijsverlangen.nl" />
+            <button type="submit" className="form-submit">
+              Stuur aanvraag <span className="btn-arrow">{'→'}</span>
+            </button>
+          </form>
+
+          <p className="cta-fallback">Liever direct mailen?</p>
           <a href="mailto:thijs@verlangenfinance.nl" className="cta-email">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -665,7 +759,9 @@ export default function App() {
           <a href="https://www.verlangenfinance.nl" target="_blank" rel="noopener">
             Verlangen Finance
           </a>
-          <a href="#">Privacy Policy</a>
+          <a href="https://www.verlangenfinance.nl/privacy" target="_blank" rel="noopener">
+            Privacy Policy
+          </a>
         </div>
       </footer>
     </>
