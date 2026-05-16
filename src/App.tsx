@@ -299,6 +299,9 @@ export default function App() {
           <p className="bekend-label">Bekend van</p>
           <div className="bekend-logos">
             <div className="bekend-logo">
+              SBS6<span className="sub">Samen Sterk</span>
+            </div>
+            <div className="bekend-logo">
               Zondag op Vier<span className="sub">TV — Pernille la Lau</span>
             </div>
             <div className="bekend-logo">
