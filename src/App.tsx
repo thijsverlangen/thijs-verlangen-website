@@ -762,9 +762,6 @@ export default function App() {
           <a href="https://www.verlangenfinance.nl" target="_blank" rel="noopener">
             Verlangen Finance
           </a>
-          <a href="https://www.verlangenfinance.nl/privacy" target="_blank" rel="noopener">
-            Privacy Policy
-          </a>
         </div>
       </footer>
     </>
