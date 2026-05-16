@@ -199,7 +199,7 @@ export default function App() {
             </a>
           </li>
         </ul>
-        <a href="mailto:thijs@verlangenfinance.nl" className="nav-cta">
+        <a href="#contact" className="nav-cta">
           Boek Thijs
         </a>
         <button className="nav-toggle" id="navToggle" type="button" aria-label="Menu openen of sluiten" aria-expanded="false" aria-controls="navLinks">
@@ -489,7 +489,7 @@ export default function App() {
             </p>
             <p>Thijs woont in Nederland en is vader van een dochter. Hij gelooft dat financiële vrijheid niet betekent dat je stopt met werken, maar dat je kiest waarvoor je werkt.</p>
           </div>
-          <a href="mailto:thijs@verlangenfinance.nl" className="btn">
+          <a href="#contact" className="btn">
             Boek Thijs <span className="btn-arrow">{'\u2192'}</span>
           </a>
         </div>
@@ -716,7 +716,7 @@ export default function App() {
 
       {/* STICKY CTA BAR */}
       <div className="sticky-cta" id="stickyCta">
-        <a href="mailto:thijs@verlangenfinance.nl" className="sticky-cta-btn">
+        <a href="#contact" className="sticky-cta-btn">
           Boek Thijs voor jouw event {'→'}
         </a>
       </div>
