@@ -317,6 +317,15 @@ export default function App() {
               FOF Zuid-Afrika<span className="sub">Podcast</span>
             </div>
             <div className="bekend-logo">
+              Code 49<span className="sub">Spreker</span>
+            </div>
+            <div className="bekend-logo">
+              HTUSM 4.0<span className="sub">Panel</span>
+            </div>
+            <div className="bekend-logo">
+              Theatershow<span className="sub">Live podium</span>
+            </div>
+            <div className="bekend-logo">
               Bestseller 60<span className="sub">#1 Auteur</span>
             </div>
           </div>
@@ -431,48 +440,6 @@ export default function App() {
                 <p className="testimonial-role">Lotgenoten</p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* EERDER GESPROKEN BIJ */}
-      <section className="events">
-        <div className="events-header fade-in">
-          <p className="events-label">Eerder gesproken bij</p>
-          <h2 className="events-title">Events, conferenties &amp; podia</h2>
-        </div>
-        <div className="events-grid fade-in">
-          <div className="event-item">
-            <p className="event-name">Zondag op Vier</p>
-            <p className="event-type">TV {'\u2022'} Pernille la Lau</p>
-          </div>
-          <div className="event-item">
-            <p className="event-name">WTFinance</p>
-            <p className="event-type">Jay Jay Boske</p>
-          </div>
-          <div className="event-item">
-            <p className="event-name">Grow Business Event</p>
-            <p className="event-type">Keynote</p>
-          </div>
-          <div className="event-item">
-            <p className="event-name">Code 49</p>
-            <p className="event-type">Spreker</p>
-          </div>
-          <div className="event-item">
-            <p className="event-name">HTUSM 4.0</p>
-            <p className="event-type">Panel</p>
-          </div>
-          <div className="event-item">
-            <p className="event-name">FOF Zuid-Afrika</p>
-            <p className="event-type">Podcast</p>
-          </div>
-          <div className="event-item">
-            <p className="event-name">Finance Inside</p>
-            <p className="event-type">Host</p>
-          </div>
-          <div className="event-item">
-            <p className="event-name">Theatershow</p>
-            <p className="event-type">Live show</p>
           </div>
         </div>
       </section>

@@ -175,25 +175,6 @@ a { text-decoration: none; color: inherit; }
 .testimonial-role { font-size: 0.75rem; color: var(--gray-mid); margin-top: 0.2rem; }
 .testimonial-divider { width: 30px; height: 2px; background: var(--gold); margin: 1.2rem 0; }
 
-/* ============ EERDER GESPROKEN BIJ ============ */
-.events { background: var(--dark); padding: 6rem 4rem; }
-.events-header { text-align: center; margin-bottom: 4rem; }
-.events-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
-.events-title { font-family: var(--font-serif); font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 400; color: var(--white); }
-.events-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1px; max-width: 1100px; margin: 0 auto;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.08);
-}
-.event-item {
-    background: var(--dark); padding: 2rem 1.5rem; text-align: center;
-    transition: all 0.3s ease; border: 1px solid transparent;
-}
-.event-item:hover { border: 1px solid var(--gold); transform: scale(1.03); background: rgba(247,205,69,0.08); }
-.event-name { font-size: 0.95rem; font-weight: 700; color: var(--white); letter-spacing: 0.02em; margin-bottom: 0.3rem; }
-.event-type { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); opacity: 0.7; }
-
 /* ============ AUTHORITY / ACTION PHOTOS ============ */
 .section-divider {
     background: var(--black); padding: 3rem 4rem; display: flex; justify-content: center; align-items: center;
@@ -469,7 +450,7 @@ a { text-decoration: none; color: inherit; }
     .hero-content { padding: 0 1.5rem 4rem; }
     .hero-scroll { display: none; }
     .intro, .topics, .book, .services, .cta, .testimonials, .faq { padding: 5rem 1.5rem; }
-    .authority, .bekend, .events, .showreel { padding: 4rem 1.5rem; }
+    .authority, .bekend, .showreel { padding: 4rem 1.5rem; }
     .marquee-bar { padding: 0.6rem 1rem; }
     .marquee-text { font-size: 0.55rem; letter-spacing: 0.12em; }
     .marquee-text .sep { margin: 0 0.8rem; }
