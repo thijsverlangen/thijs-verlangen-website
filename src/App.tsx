@@ -260,7 +260,7 @@ export default function App() {
             <div className="stat-number">150+</div>
             <div className="stat-label">Podcast afleveringen</div>
           </div>
-          <div className="stat">
+          <div className="stat stat-highlight">
             <div className="stat-number">#1</div>
             <div className="stat-label">Bestseller 60</div>
           </div>
@@ -444,6 +444,11 @@ export default function App() {
         </div>
       </section>
 
+      {/* SECTION DIVIDER */}
+      <div className="section-divider" aria-hidden="true">
+        <span className="section-divider-line"></span>
+      </div>
+
       {/* SHOWREEL / THEATER VIDEO */}
       <section className="showreel">
         <div className="showreel-header fade-in">
@@ -623,6 +628,11 @@ export default function App() {
         </div>
       </section>
 
+      {/* SECTION DIVIDER */}
+      <div className="section-divider" aria-hidden="true">
+        <span className="section-divider-line"></span>
+      </div>
+
       {/* CONTACT / CTA */}
       <section className="cta" id="contact">
         <div className="fade-in">
@@ -717,7 +727,7 @@ export default function App() {
       {/* STICKY CTA BAR */}
       <div className="sticky-cta" id="stickyCta">
         <a href="#contact" className="sticky-cta-btn">
-          Boek Thijs voor jouw event {'→'}
+          Boek Thijs <span>{'→'}</span>
         </a>
       </div>
 
