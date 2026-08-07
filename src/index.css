@@ -440,6 +440,9 @@ section[id] { scroll-margin-top: 90px; }
 /* ============ FOOTER ============ */
 .footer { background: var(--black); padding: 3rem 4rem; text-align: center; }
 .footer-text { font-size: 0.75rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); }
+.footer-topics { display: flex; justify-content: center; gap: 0.6rem 1.5rem; flex-wrap: wrap; margin-top: 1.2rem; }
+.footer-topics a { font-size: 0.7rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.35); transition: color 0.3s; }
+.footer-topics a:hover { color: var(--gold); }
 .footer-links { display: flex; justify-content: center; gap: 2rem; margin-top: 1rem; }
 .footer-links a { font-size: 0.7rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.3); transition: color 0.3s; }
 .footer-links a:hover { color: var(--gold); }

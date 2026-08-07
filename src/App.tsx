@@ -734,6 +734,13 @@ export default function App() {
       {/* FOOTER */}
       <footer className="footer">
         <p className="footer-text">{'\u00A9'} 2026 THIJS VERLANGEN {'\u2022'} VERLANGEN FINANCE B.V.</p>
+        <nav className="footer-topics" aria-label="Spreker-onderwerpen">
+          <a href="/financieel-spreker/">Financieel spreker</a>
+          <a href="/spreker-vermogensopbouw/">Spreker vermogensopbouw</a>
+          <a href="/spreker-belastingoptimalisatie/">Spreker belastingoptimalisatie</a>
+          <a href="/spreker-pensioen/">Spreker pensioen</a>
+          <a href="/spreker-generatievermogen/">Spreker generatievermogen</a>
+        </nav>
         <div className="footer-links">
           <a href="https://www.verlangenfinance.nl" target="_blank" rel="noopener">
             Verlangen Finance
