@@ -70,13 +70,8 @@ export default function App() {
       anchorHandlers.push({ el: a, handler: h });
     });
 
-    // Theater video: cycle showreel → behind-the-scenes → loop
+    // Theater video: lazy-load zodra de sectie nadert, daarna cycle showreel → behind-the-scenes
     const theaterVideo = document.getElementById('theaterVideo') as HTMLVideoElement | null;
-    if (theaterVideo) {
-      // React's muted prop doesn't always render as HTML attribute — set explicitly
-      theaterVideo.muted = true;
-      theaterVideo.play().catch(() => {});
-    }
     const videoSources = ['showreel-short.mp4', 'behindthescenes-short.mp4'];
     let currentVideo = 0;
     const onTheaterEnd = () => {
@@ -88,6 +83,24 @@ export default function App() {
       theaterVideo.play().catch(() => {});
     };
     theaterVideo?.addEventListener('ended', onTheaterEnd);
+
+    let videoObserver: IntersectionObserver | null = null;
+    if (theaterVideo) {
+      videoObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && !theaterVideo.src) {
+              theaterVideo.src = videoSources[0];
+              theaterVideo.muted = true;
+              theaterVideo.play().catch(() => {});
+              videoObserver?.disconnect();
+            }
+          });
+        },
+        { rootMargin: '400px' }
+      );
+      videoObserver.observe(theaterVideo);
+    }
 
     // Animated counters on stats
     const statObserver = new IntersectionObserver(
@@ -160,6 +173,7 @@ export default function App() {
       anchorHandlers.forEach(({ el, handler }) => el.removeEventListener('click', handler));
       observer.disconnect();
       theaterVideo?.removeEventListener('ended', onTheaterEnd);
+      videoObserver?.disconnect();
       statObserver.disconnect();
       if (bookCover) {
         bookCover.removeEventListener('mousemove', onBookMove);
@@ -456,9 +470,7 @@ export default function App() {
           <h2 className="showreel-title">Van theaterpodium tot keynote</h2>
         </div>
         <div className="showreel-wrapper fade-in">
-          <video id="theaterVideo" autoPlay muted playsInline preload="metadata" poster="DSC08407_web.jpg">
-            <source src="showreel-short.mp4" type="video/mp4" />
-          </video>
+          <video id="theaterVideo" muted playsInline preload="none" poster="DSC08407_web.jpg"></video>
         </div>
         <p className="showreel-caption">Highlights uit recente optredens</p>
       </section>
@@ -571,7 +583,7 @@ export default function App() {
             <h2 className="book-title">
               Pas Op Dit Boek<br />Maakt Je Rijk
             </h2>
-            <p className="book-text">Vandaag binnengekomen op #1 in de Bestseller 60. Het complete handboek voor iedereen die grip wil krijgen op geld, belasting en vermogensopbouw. Van de basis tot geavanceerde fiscale strategieën, geschreven in de heldere taal waar Thijs om bekend staat.</p>
+            <p className="book-text">Binnengekomen op #1 in De Bestseller 60. Het complete handboek voor iedereen die grip wil krijgen op geld, belasting en vermogensopbouw. Van de basis tot geavanceerde fiscale strategieën, geschreven in de heldere taal waar Thijs om bekend staat.</p>
             <a href="https://www.verlangenfinance.nl/preorder-boek" target="_blank" rel="noopener" className="btn btn-book">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginRight: '6px', verticalAlign: 'middle' }}>
                 <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
