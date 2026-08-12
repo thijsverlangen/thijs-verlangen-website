@@ -72,7 +72,7 @@ export default function App() {
 
     // Theater video: lazy-load zodra de sectie nadert, daarna cycle showreel → behind-the-scenes
     const theaterVideo = document.getElementById('theaterVideo') as HTMLVideoElement | null;
-    const videoSources = ['showreel-short.mp4', 'behindthescenes-short.mp4'];
+    const videoSources = ['/showreel-short.mp4', '/behindthescenes-short.mp4'];
     let currentVideo = 0;
     const onTheaterEnd = () => {
       if (!theaterVideo) return;
@@ -226,7 +226,7 @@ export default function App() {
       {/* HERO */}
       <section className="hero" id="hero">
         <div className="hero-image">
-          <img src="hero-new.jpg" alt="Thijs Verlangen" />
+          <img src="/hero-new.jpg" alt="Thijs Verlangen" />
         </div>
         <div className="hero-gradient"></div>
         <div className="hero-content">
@@ -359,13 +359,13 @@ export default function App() {
         </div>
         <div className="authority-grid">
           <div className="authority-img fade-in">
-            <img src="FullSizeRender 3_web.jpg" alt="Thijs Verlangen op het podium met microfoon" loading="lazy" />
+            <img src="/FullSizeRender 3_web.jpg" alt="Thijs Verlangen op het podium met microfoon" loading="lazy" />
           </div>
           <div className="authority-img fade-in fade-in-delay-1">
-            <img src="DSC04640-2_web.jpg" alt="Thijs Verlangen spreekt voor publiek" loading="lazy" />
+            <img src="/DSC04640-2_web.jpg" alt="Thijs Verlangen spreekt voor publiek" loading="lazy" />
           </div>
           <div className="authority-img fade-in fade-in-delay-2">
-            <img src="VV6_web.jpg" alt="Thijs Verlangen presenteert strategie" loading="lazy" />
+            <img src="/VV6_web.jpg" alt="Thijs Verlangen presenteert strategie" loading="lazy" />
           </div>
         </div>
       </section>
@@ -470,7 +470,7 @@ export default function App() {
           <h2 className="showreel-title">Van theaterpodium tot keynote</h2>
         </div>
         <div className="showreel-wrapper fade-in">
-          <video id="theaterVideo" muted playsInline preload="none" poster="DSC08407_web.jpg"></video>
+          <video id="theaterVideo" muted playsInline preload="none" poster="/DSC08407_web.jpg"></video>
         </div>
         <p className="showreel-caption">Highlights uit recente optredens</p>
       </section>
@@ -478,7 +478,7 @@ export default function App() {
       {/* BIO */}
       <section className="bio" id="over">
         <div className="bio-image">
-          <img src="20250228-tomdoms_0290073_web.jpg" alt="Thijs Verlangen presenteert" loading="lazy" />
+          <img src="/20250228-tomdoms_0290073_web.jpg" alt="Thijs Verlangen presenteert" loading="lazy" />
         </div>
         <div className="bio-content fade-in">
           <p className="section-label">Over Thijs</p>
@@ -568,11 +568,11 @@ export default function App() {
           <div className="book-covers">
             <div className="book-cover">
               <div className="book-cover-visual">
-                <img src="boek-voorkant.png" alt="Pas Op. Dit Boek Maakt Je Rijk - voorkant" loading="lazy" />
+                <img src="/boek-voorkant.png" alt="Pas Op. Dit Boek Maakt Je Rijk - voorkant" loading="lazy" />
               </div>
             </div>
             <div className="book-back">
-              <img src="boek-achterkant.png" alt="Pas Op. Dit Boek Maakt Je Rijk - achterkant" loading="lazy" />
+              <img src="/boek-achterkant.png" alt="Pas Op. Dit Boek Maakt Je Rijk - achterkant" loading="lazy" />
             </div>
           </div>
           <div className="book-content">
@@ -594,7 +594,7 @@ export default function App() {
           </div>
         </div>
         <div className="bestseller-proof fade-in">
-          <img src="bestseller-nr1.png" alt="Pas Op. Dit Boek Maakt Je Rijk op #1 in de Bestseller 60" loading="lazy" />
+          <img src="/bestseller-nr1.png" alt="Pas Op. Dit Boek Maakt Je Rijk op #1 in de Bestseller 60" loading="lazy" />
         </div>
       </section>
 
